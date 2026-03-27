@@ -1,0 +1,10 @@
+hugging-face
+torch
+transformers
+diffusers
+sounddevice
+scipy
+whisper
+deep-translator
+pillow
+tk
