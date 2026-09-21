@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "FIR-2023-00142",
+    "image_file": "case_1.jpg",
+    "crime_type": "Theft",
+    "fir_count": 2,
+    "status": "Under Investigation",
+    "last_reported": "2023-08-14"
+  },
+  {
+    "case_id": "FIR-2022-00098",
+    "image_file": "case_2.jpg",
+    "crime_type": "Assault",
+    "fir_count": 1,
+    "status": "Closed",
+    "last_reported": "2022-11-02"
+  },
+  {
+    "case_id": "FIR-2024-00211",
+    "image_file": "case_3.jpg",
+    "crime_type": "Fraud",
+    "fir_count": 3,
+    "status": "Under Investigation",
+    "last_reported": "2024-03-19"
+  }
+]
