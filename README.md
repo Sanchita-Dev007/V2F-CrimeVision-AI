@@ -1,6 +1,4 @@
-Here is the complete, unbroken Markdown content with all formatting preserved so you can directly copy and paste it into your `README.md` file:
 
-```markdown
 # CrimeVision-AI
 
 > **Multimodal Acoustic-to-Craniofacial Synthesis & Automated Case Correlation Pipeline**
