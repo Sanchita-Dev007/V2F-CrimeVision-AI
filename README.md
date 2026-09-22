@@ -221,7 +221,13 @@ tensorflow>=2.15.0
 
 * **Admissibility Auditing:** Every composite is generated alongside an immutable SHA-256 cryptographic hash to preserve evidentiary chain-of-custody.
 
+![CrimeVision-AI Hero Overview](assets/hero_canvas.png)
 
+### Stage 01: Multilingual Voice Intake & Prompt Compilation
+![Stage 01 Voice Intake](assets/stage01_voice_intake.png)
+
+### Stage 02: Latent Diffusion Suspect Composite
+![Stage 02 Suspect Composite](assets/stage02_suspect_composite.png)
 
 ---
 
