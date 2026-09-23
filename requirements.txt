@@ -1,21 +1,13 @@
-streamlit>=1.32.0
-plotly>=5.18.0
-numpy>=1.24.3,<2.0.0
-scipy>=1.10.1
-sounddevice>=0.4.6
-
-# Deep Learning & Generative Frameworks
-torch>=2.1.0
-diffusers>=0.26.0
-transformers>=4.38.0
-accelerate>=0.27.0
-
-# Speech Recognition & NLP Normalization
-openai-whisper>=20231117
-deep-translator>=1.11.4
-
-# Biometrics & Facial Feature Extraction
-deepface>=0.0.90
-retina-face>=0.0.14
-tf-keras>=2.15.0
-tensorflow>=2.15.0
+streamlit
+torch
+torchvision
+diffusers
+transformers
+accelerate
+openai-whisper
+deep-translator
+deepface
+opencv-python-headless
+scipy
+plotly
+sounddevice
