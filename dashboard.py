@@ -78,7 +78,7 @@ st.markdown(
         letter-spacing: 0.04em !important;
     }
 
-    /* Sleek Tactical Slider Track (Fixes the bulky green block) */
+    /* Sleek Tactical Slider Track (Fixes bulky green block) */
     div[data-baseweb="slider"] {
         padding-top: 8px !important;
         padding-bottom: 8px !important;
@@ -293,7 +293,7 @@ with hero_left:
             SYNTHESIZING SUSPECT FACES DIRECTLY FROM <span style="color:#00ff66; text-shadow: 0 0 20px rgba(0,255,102,0.4);">AUDIO RECORDINGS</span>
         </div>
         <div style="color:#94a3b8; font-size:0.95rem; line-height:1.6; margin-bottom:24px;">
-            CrimeVision AI reconstructs high-fidelity craniofacial morphology from witness statements, wiretaps, and emergency dispatch calls using multi-lingual Whisper transcription, structural prompt compilation, and Latent Diffusion synthesis[cite: 2, 3].
+            CrimeVision AI reconstructs high-fidelity craniofacial morphology from witness statements, wiretaps, and emergency dispatch calls using multi-lingual Whisper transcription, structural prompt compilation, and Latent Diffusion synthesis.
         </div>
     """,
         unsafe_allow_html=True,
@@ -485,7 +485,7 @@ with tab1:
         <div class="tactical-box">
             <div class="cyber-pill">STAGE 01: AUDIO INTAKE & ASR TRANSCRIPTION</div>
             <div style="margin-top:8px; font-size:0.85rem; color:#94a3b8;">
-                Captures acoustic witness testimony in English, Hindi, or Punjabi. Whisper performs automatic speech recognition, followed by Deep Translator to formulate a standardized forensic prompt[cite: 2, 3].
+                Captures acoustic witness testimony in English, Hindi, or Punjabi. Whisper performs automatic speech recognition, followed by Deep Translator to formulate a standardized forensic prompt.
             </div>
         </div>
     """,
@@ -523,15 +523,15 @@ with tab1:
                 os.makedirs("audio", exist_ok=True)
                 audio_file = record_audio(
                     seconds=duration, output_file="audio/voice_input.wav"
-                )[cite: 2]
+                )
                 status_box.markdown(
                     "<div class='tactical-terminal'>⚡ Stream captured. Processing Whisper ASR transcription & English translation...</div>",
                     unsafe_allow_html=True,
                 )
 
-                raw = transcribe(audio_file)[cite: 2]
-                eng = translate_text(raw)[cite: 2]
-                prompt = build_prompt(eng)[cite: 2]
+                raw = transcribe(audio_file)
+                eng = translate_text(raw)
+                prompt = build_prompt(eng)
 
                 st.session_state.audio_path = audio_file
                 st.session_state.transcription = raw
@@ -561,10 +561,10 @@ with tab1:
                     else preset_choice.split(": ")[-1]
                 )
                 if chosen and chosen != "-- Select Simulated Testimony --":
-                    eng = translate_text(chosen)[cite: 2]
+                    eng = translate_text(chosen)
                     st.session_state.transcription = chosen
                     st.session_state.translation = eng
-                    st.session_state.prompt = build_prompt(eng)[cite: 2]
+                    st.session_state.prompt = build_prompt(eng)
                     st.success("Verbal description normalized to prompt.")
 
     with c_in2:
@@ -609,7 +609,7 @@ with tab2:
         <div class="tactical-box">
             <div class="cyber-pill cyber-pill-cyan">STAGE 02: LATENT DIFFUSION SYNTHESIS</div>
             <div style="margin-top:8px; font-size:0.85rem; color:#94a3b8;">
-                Executes reverse latent diffusion using Stable Diffusion v1.5 with CPU memory optimization (attention slicing enabled)[cite: 2].
+                Executes reverse latent diffusion using Stable Diffusion v1.5 with CPU memory optimization (attention slicing enabled).
             </div>
         </div>
     """,
@@ -643,14 +643,14 @@ with tab2:
             if not st.session_state.prompt:
                 st.session_state.prompt = build_prompt(
                     "He was roughly 35 years old with sunken dark eyes, an angular jaw, and a faint scar above his left eyebrow."
-                )[cite: 2]
+                )
 
             with st.spinner("Running reverse diffusion denoising on CPU..."):
                 out = generate_face(
                     prompt_text=st.session_state.prompt,
                     steps=sd_steps,
                     guidance=cfg_scale,
-                )[cite: 2]
+                )
                 st.session_state.suspect_image_path = out
 
                 with open(out, "rb") as f:
@@ -658,10 +658,10 @@ with tab2:
                         f.read()
                     ).hexdigest()
 
-                match_res = match_face(out, threshold=DEFAULT_THRESHOLD)[cite: 2]
+                match_res = match_face(out, threshold=DEFAULT_THRESHOLD)
                 st.session_state.history_matches = match_res.get(
                     "matches", []
-                )[cite: 2]
+                )
 
                 st.success(
                     "Suspect composite synthesized and SHA-256 evidence sealed."
@@ -724,7 +724,7 @@ with tab3:
         <div class="tactical-box">
             <div class="cyber-pill cyber-pill-amber">STAGE 03: FIR RECORD CORRELATION</div>
             <div style="margin-top:8px; font-size:0.85rem; color:#94a3b8;">
-                Extracts a 512-dimensional facial embedding vector using DeepFace (RetinaFace backend + FaceNet weights) and computes cosine similarity against pre-computed database.json records[cite: 2].
+                Extracts a 512-dimensional facial embedding vector using DeepFace (RetinaFace backend + FaceNet weights) and computes cosine similarity against pre-computed database.json records.
             </div>
         </div>
     """,
@@ -745,10 +745,10 @@ with tab3:
                 m_result = match_face(
                     st.session_state.suspect_image_path,
                     threshold=match_thresh,
-                )[cite: 2]
+                )
                 st.session_state.history_matches = m_result.get(
                     "matches", []
-                )[cite: 2]
+                )
                 st.success("Database query finished.")
             else:
                 st.warning("Generate a composite in Stage 02 first.")
@@ -936,7 +936,7 @@ with tab5:
         <div class="tactical-box">
             <div class="cyber-pill">STAGE 05: ARCHITECTURE & VIVA ASSISTANT</div>
             <div style="margin-top:8px; font-size:0.85rem; color:#94a3b8;">
-                Offline rule-based Q&A intelligence engine explaining model mechanics, hardware optimization, and ethical considerations[cite: 3].
+                Offline rule-based Q&A intelligence engine explaining model mechanics, hardware optimization, and ethical considerations.
             </div>
         </div>
     """,
@@ -944,10 +944,10 @@ with tab5:
     )
 
     q_chips = st.columns(3)
-    suggested = assistant.get_suggested_questions()[cite: 3]
+    suggested = assistant.get_suggested_questions()
     for idx, q in enumerate(suggested[:3]):
         if q_chips[idx].button(q, key=f"chip_{idx}"):
-            ans = assistant.get_answer(q)[cite: 3]
+            ans = assistant.get_answer(q)
             st.session_state.chat_history.append(("user", q))
             st.session_state.chat_history.append(("assistant", ans))
 
@@ -984,7 +984,7 @@ with tab5:
         "Enter inquiry regarding architecture, hardware optimization, or limitations:"
     )
     if st.button("TRANSMIT QUESTION") and user_q:
-        ans = assistant.get_answer(user_q)[cite: 3]
+        ans = assistant.get_answer(user_q)
         st.session_state.chat_history.append(("user", user_q))
         st.session_state.chat_history.append(("assistant", ans))
         st.rerun()
