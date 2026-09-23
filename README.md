@@ -219,15 +219,20 @@ tensorflow>=2.15.0
 * **Biometric Parity Caveats:** Face verification models display known demographic variance across skin tones, lighting conditions, and facial asymmetry.
 
 
-* **Admissibility Auditing:** Every composite is generated alongside an immutable SHA-256 cryptographic hash to preserve evidentiary chain-of-custody.
+* **Admissibility Auditing:** Every composite is generated alongside an immutable SHA-256 cryptographic hash to preserve evidentiary chain-of-custody
 
-![CrimeVision-AI Hero Overview](assets/hero_canvas.png)
+### CrimeVision AI Hero Overview
+
+<img width="1920" height="1080" alt="hero_canvas" src="https://github.com/user-attachments/assets/1ad52a49-0cdd-41d2-87a5-2f05b4d765f8" />
+
 
 ### Stage 01: Multilingual Voice Intake & Prompt Compilation
-![Stage 01 Voice Intake](assets/stage01_voice_intake.png)
+<img width="1920" height="1080" alt="stage01_voice_intake" src="https://github.com/user-attachments/assets/a693e43f-2ad3-4129-848e-47f58a7ab47d" />
+
 
 ### Stage 02: Latent Diffusion Suspect Composite
-![Stage 02 Suspect Composite](assets/stage02_suspect_composite.png)
+<img width="1920" height="1080" alt="stage02_suspect_composite" src="https://github.com/user-attachments/assets/3cd90cd0-e8e6-472e-a271-9a2843c42d13" />
+
 
 ---
 
